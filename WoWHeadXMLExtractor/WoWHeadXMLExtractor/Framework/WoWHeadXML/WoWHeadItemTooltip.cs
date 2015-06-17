@@ -11,6 +11,7 @@ namespace WoWHeadXMLExtractor.Framework.WoWHeadXML
         public int ItemLevel { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string Source { get; set; }
         public int QualityId { get; set; }
         public int SlotId { get; set; }
         public int SubclassId { get; set; }
@@ -34,5 +35,6 @@ namespace WoWHeadXMLExtractor.Framework.WoWHeadXML
         public int AgilityIntellect { get; set; }
         public int StrengthIntellect { get; set; }
         public int AgilityStrengthIntellect { get; set; }
+        public double DropChance { get; set; }
     }
 }

@@ -305,6 +305,46 @@ namespace WoWHeadXMLExtractor.Services
                     }
                 }
                 catch { }
+
+                //Item Level
+                try
+                {
+                    indexStart = record.StrippedHtmlString.IndexOf("!--ilvl--|", 0) + 10;
+                    indexEnd = record.StrippedHtmlString.IndexOf("!", indexStart);
+
+                    if (indexStart >= 0 && indexEnd >= 0)
+                    {
+                        record.TooltipData.ItemLevel = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
+                    }
+                }
+                catch { }
+
+                //Source + Drop Chance
+                try
+                {
+                    indexStart = record.StrippedHtmlString.IndexOf("Dropped by: ", 0) + 12;
+                    indexEnd = record.StrippedHtmlString.IndexOf("!", indexStart);
+
+                    if (indexStart >= 0 && indexEnd >= 0)
+                    {
+                        try
+                        {
+                            int indexStart2 = record.StrippedHtmlString.IndexOf("Drop Chance: ", indexStart) + 13;
+                            int indexEnd2 = record.StrippedHtmlString.IndexOf("%", indexStart2);
+
+                            if (indexStart2 >= indexStart && indexEnd2 >= indexStart)
+                            {
+                                record.TooltipData.DropChance = Convert.ToDouble(record.StrippedHtmlString.Substring(indexStart2, (indexEnd2 - indexStart2)));
+                                indexEnd = indexStart2-13;
+                            }
+                        }
+                        catch { }
+
+                        record.TooltipData.Source = record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart));
+                    }
+                }
+                catch { }
+                
             }
 
             if (ParseSource != 1) //pull from jsonEquip

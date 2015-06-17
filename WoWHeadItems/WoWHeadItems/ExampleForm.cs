@@ -30,6 +30,8 @@ namespace WoWHeadItems
             textboxOutput.Text = "ID = " + requestedItem.WoWHeadXML.item.id.ToString()
                 + Environment.NewLine + "Name = " + requestedItem.WoWHeadXML.Name
                 + Environment.NewLine + "Description = " + requestedItem.WoWHeadXML.Description
+                + Environment.NewLine + "Source = " + requestedItem.WoWHeadXML.Source
+                + Environment.NewLine + "Drop Chance = " + requestedItem.WoWHeadXML.DropChance
                 + Environment.NewLine + "Level = " + requestedItem.WoWHeadXML.ItemLevel
                 + Environment.NewLine + "Quality = " + requestedItem.WoWHeadXML.item.quality.id + " - " + requestedItem.WoWHeadXML.item.quality.Value
                 + Environment.NewLine + "Class = " + requestedItem.WoWHeadXML.item.@class.id + " - " + requestedItem.WoWHeadXML.item.@class.Value

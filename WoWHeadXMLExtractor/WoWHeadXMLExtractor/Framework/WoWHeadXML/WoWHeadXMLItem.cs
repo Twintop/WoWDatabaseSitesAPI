@@ -265,6 +265,21 @@ namespace WoWHeadXMLExtractor.Framework.Core
             }
         }
 
+        public double DropChance
+        {
+            get
+            {
+                double returnValue = 0;
+
+                if (this.TooltipData.DropChance > returnValue)
+                {
+                    returnValue = this.TooltipData.DropChance;
+                }
+
+                return returnValue;
+            }
+        }
+
         public int Durability
         {
             get
@@ -382,6 +397,11 @@ namespace WoWHeadXMLExtractor.Framework.Core
                 }
 
                 if (this.TooltipData.ItemLevel > returnValue)
+                {
+                    returnValue = this.TooltipData.ItemLevel;
+                }
+
+                if (this.item.level > returnValue)
                 {
                     returnValue = this.TooltipData.ItemLevel;
                 }
@@ -657,6 +677,21 @@ namespace WoWHeadXMLExtractor.Framework.Core
                 if (this.TooltipData.SpellPower > returnValue)
                 {
                     returnValue = this.TooltipData.SpellPower;
+                }
+
+                return returnValue;
+            }
+        }
+
+        public string Source
+        {
+            get
+            {
+                string returnValue = string.Empty;
+
+                if (!string.IsNullOrWhiteSpace(this.TooltipData.Source))
+                {
+                    returnValue = this.TooltipData.Source;
                 }
 
                 return returnValue;
