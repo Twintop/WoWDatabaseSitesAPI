@@ -10,38 +10,45 @@ namespace WoWHeadXMLExtractor
     {
         public static string StripNonCommentTagsCharArray(string source)
         {
-            char[] array = new char[source.Length];
-            int arrayIndex = 0;
-            int inside = 0;
-            for (int i = 0; i < source.Length; i++)
+            if (string.IsNullOrWhiteSpace(source))
             {
-                char let = source[i];
-                if (let == '<')
+                return string.Empty;
+            }
+            else
+            {
+                char[] array = new char[source.Length];
+                int arrayIndex = 0;
+                int inside = 0;
+                for (int i = 0; i < source.Length; i++)
                 {
-                    inside = 1;
-                    continue;
-                }
-                if (let == '>')
-                {
-                    if (inside == 2)
+                    char let = source[i];
+                    if (let == '<')
                     {
-                        array[arrayIndex] = '|';
+                        inside = 1;
+                        continue;
+                    }
+                    if (let == '>')
+                    {
+                        if (inside == 2)
+                        {
+                            array[arrayIndex] = '|';
+                            arrayIndex++;
+                        }
+                        inside = 0;
+                        continue;
+                    }
+                    if (let == '!')
+                    {
+                        inside = 2;
+                    }
+                    if (inside != 1)
+                    {
+                        array[arrayIndex] = let;
                         arrayIndex++;
                     }
-                    inside = 0;
-                    continue;
                 }
-                if (let == '!')
-                {
-                    inside = 2;
-                }
-                if (inside != 1)
-                {
-                    array[arrayIndex] = let;
-                    arrayIndex++;
-                }
+                return new string(array, 0, arrayIndex);
             }
-            return new string(array, 0, arrayIndex);
         }
     }
 }

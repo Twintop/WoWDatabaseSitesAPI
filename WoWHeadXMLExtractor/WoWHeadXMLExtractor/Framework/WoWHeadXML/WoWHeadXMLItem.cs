@@ -14,6 +14,9 @@ namespace WoWHeadXMLExtractor.Framework.Core
         public WoWHeadXMLItem()
         {
             this.TooltipData = new WoWHeadItemTooltip();
+            this.itemJsonData = new itemJson();
+            this.itemJsonEquipData = new itemJsonEquip();
+            this.item = new wowheadItem();
         }
 
         public itemJson itemJsonData { get; set; }
