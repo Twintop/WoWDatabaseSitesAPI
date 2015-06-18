@@ -711,7 +711,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
                     returnValue = this.TooltipData.Source;
                 }
 
-                if (this.itemJsonData.sourcemore.Count > 0)
+                if (this.itemJsonData.sourcemore != null && this.itemJsonData.sourcemore.Count > 0)
                 {
                     if (!string.IsNullOrWhiteSpace(this.itemJsonData.sourcemore[0].n))
                     {
@@ -839,7 +839,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
             {
                 Zones returnValue = Zones.Unknown;
 
-                if (this.itemJsonData.sourcemore.Count > 0)
+                if (this.itemJsonData.sourcemore != null && this.itemJsonData.sourcemore.Count > 0)
                 {
                     returnValue = (Zones)this.itemJsonData.sourcemore[0].z;
                 }
@@ -854,7 +854,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
             {
                 int returnValue = 0;
 
-                if (this.itemJsonData.sourcemore.Count > 0)
+                if (this.itemJsonData.sourcemore != null && this.itemJsonData.sourcemore.Count > 0)
                 {
                     returnValue = this.itemJsonData.sourcemore[0].z;
                 }
@@ -869,7 +869,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
             {
                 string returnValue = string.Empty;
 
-                if (this.itemJsonData.sourcemore.Count > 0)
+                if (this.itemJsonData.sourcemore != null && this.itemJsonData.sourcemore.Count > 0)
                 {
                     string[] name = Enum.GetName(typeof(Zones), this.itemJsonData.sourcemore[0].z).Split(new string[] {"______"}, StringSplitOptions.None);
                     returnValue = name[0].Replace("_____", "' ");
