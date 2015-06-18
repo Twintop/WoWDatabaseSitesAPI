@@ -59,7 +59,50 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Warlock = 9,
         Monk = 10,
         DeathKnight = 11
-    }
+    };
+
+    public enum Specializations
+    {
+        None = 0,
+        Pet = 1,
+        Pet_Ferocity = 74,
+        Pet_Tenacity = 81,
+        Pet_Cunning = 79,
+        Warrior_Arms = 71,
+        Warrior_Fury = 72,
+        Warrior_Protection = 73,
+        Paladin_Holy = 65,
+        Paladin_Protection = 66,
+        Paladin_Retribution = 70,
+        Hunder_BeastMastery = 253,
+        Hunter_Marksmanship = 254,
+        Hunter_Survival = 255,
+        Rogue_Assassination = 259,
+        Rogue_Combat = 260,
+        Rogue_Subtlety = 261,
+        Priest_Discipline = 256,
+        Priest_Holy = 257,
+        Priest_Shadow = 258,
+        Druid_Balance = 102,
+        Druid_Feral = 103,
+        Druid_Guardian = 104,
+        Druid_Restoration = 105,
+        Shaman_Elemental = 262,
+        Shaman_Enhancement = 263,
+        Shaman_Restoration = 264,
+        Mage_Arcane = 62,
+        Mage_Fire = 63,
+        Mage_Frost = 64,
+        Warlock_Affliction = 265,
+        Warlock_Demonology = 266,
+        Warlock_Destruction = 267,
+        Monk_Brewmaster = 268,
+        Monk_Mistweaver = 270,
+        Monk_Windwalker = 269,
+        DeathKnight_Blood = 250,
+        DeathKnight_Frost = 251,
+        DeathKnight_Unholy = 252
+    };
 
     public enum InventorySlot
     {
@@ -88,7 +131,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
         HeldInOffHand = 23,
         Projectile = 24,
         Thrown = 25
-    }
+    };
 
     public enum ItemClass
     {
@@ -104,7 +147,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Key = 13,
         Miscellaneous = 15,
         Glyph = 16
-    }
+    };
 
     public enum WeaponSubClass
     {
@@ -125,7 +168,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Crossbow = 18,
         Wand = 19,
         FishingPole = 20
-    }
+    };
 
     public enum ArmorSubClass
     {
@@ -133,7 +176,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Leather = 2,
         Mail = 3,
         Plate = 4
-    }
+    };
 
     public enum Quality
     {
@@ -146,7 +189,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Artifact = 6,
         Heirloom = 7,
         WoWToken = 8
-    }
+    };
 
     public enum Zones
     {

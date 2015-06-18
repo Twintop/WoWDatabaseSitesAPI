@@ -711,6 +711,14 @@ namespace WoWHeadXMLExtractor.Framework.Core
                     returnValue = this.TooltipData.Source;
                 }
 
+                if (this.itemJsonData.sourcemore.Count > 0)
+                {
+                    if (!string.IsNullOrWhiteSpace(this.itemJsonData.sourcemore[0].n))
+                    {
+                        returnValue = this.itemJsonData.sourcemore[0].n;
+                    }
+                }
+
                 return returnValue;
             }
         }
