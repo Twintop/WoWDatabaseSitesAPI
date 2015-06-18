@@ -666,6 +666,20 @@ namespace WoWHeadXMLExtractor.Framework.Core
             }
         }
 
+        public string SlotName
+        {
+            get
+            {
+                string returnValue = string.Empty;
+
+                InventorySlot slot = (InventorySlot)this.SlotId;
+
+                returnValue = Enum.GetName(typeof(InventorySlot), slot);
+
+                return returnValue;
+            }
+        }
+
         public int SpellPower
         {
             get
@@ -805,6 +819,52 @@ namespace WoWHeadXMLExtractor.Framework.Core
                 if (this.TooltipData.Versatility > returnValue)
                 {
                     returnValue = this.TooltipData.Versatility;
+                }
+
+                return returnValue;
+            }
+        }
+
+        public Zones ZoneEnum
+        {
+            get
+            {
+                Zones returnValue = Zones.Unknown;
+
+                if (this.itemJsonData.sourcemore.Count > 0)
+                {
+                    returnValue = (Zones)this.itemJsonData.sourcemore[0].z;
+                }
+
+                return returnValue;
+            }
+        }
+
+        public int ZoneId
+        {
+            get
+            {
+                int returnValue = 0;
+
+                if (this.itemJsonData.sourcemore.Count > 0)
+                {
+                    returnValue = this.itemJsonData.sourcemore[0].z;
+                }
+
+                return returnValue;
+            }
+        }
+
+        public string ZoneName
+        {
+            get
+            {
+                string returnValue = string.Empty;
+
+                if (this.itemJsonData.sourcemore.Count > 0)
+                {
+                    string[] name = Enum.GetName(typeof(Zones), this.itemJsonData.sourcemore[0].z).Split(new string[] {"__"}, StringSplitOptions.None);
+                    returnValue = name[0].Replace('_', ' ');
                 }
 
                 return returnValue;

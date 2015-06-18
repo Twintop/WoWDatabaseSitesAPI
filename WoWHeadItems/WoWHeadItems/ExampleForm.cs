@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WoWHeadXMLExtractor;
 using WoWHeadXMLExtractor.BusinessLogic;
 using WoWHeadXMLExtractor.Framework;
 using WoWHeadXMLExtractor.Framework.Core;
@@ -32,14 +33,19 @@ namespace WoWHeadItems
                 + Environment.NewLine + "Description = " + requestedItem.WoWHeadXML.Description
                 + Environment.NewLine + "Source = " + requestedItem.WoWHeadXML.Source
                 + Environment.NewLine + "Drop Chance = " + requestedItem.WoWHeadXML.DropChance
+                + Environment.NewLine + "Zone = " + requestedItem.WoWHeadXML.ZoneId + " - " + requestedItem.WoWHeadXML.ZoneName
+                + Environment.NewLine + "\tWorld? = " + WoWHeadXMLExtractor.Utility.IsZoneWorldZone(requestedItem.WoWHeadXML.ZoneEnum)
+                + Environment.NewLine + "\tRaid? = " + WoWHeadXMLExtractor.Utility.IsZoneRaid(requestedItem.WoWHeadXML.ZoneEnum)
+                + Environment.NewLine + "\tDungeon? = " + WoWHeadXMLExtractor.Utility.IsZoneDungeon(requestedItem.WoWHeadXML.ZoneEnum)
+                + Environment.NewLine + "\tScenario? = " + WoWHeadXMLExtractor.Utility.IsZoneScenario(requestedItem.WoWHeadXML.ZoneEnum)
                 + Environment.NewLine + "Level = " + requestedItem.WoWHeadXML.ItemLevel
                 + Environment.NewLine + "Quality = " + requestedItem.WoWHeadXML.item.quality.id + " - " + requestedItem.WoWHeadXML.item.quality.Value
                 + Environment.NewLine + "Class = " + requestedItem.WoWHeadXML.item.@class.id + " - " + requestedItem.WoWHeadXML.item.@class.Value
                 + Environment.NewLine + "Subclass = " + requestedItem.WoWHeadXML.item.subclass.id + " - " + requestedItem.WoWHeadXML.item.subclass.Value
                 + Environment.NewLine + "Icon = " + requestedItem.WoWHeadXML.item.icon.displayId + " - " + requestedItem.WoWHeadXML.item.icon.Value
-                + Environment.NewLine + "Slot = " + requestedItem.WoWHeadXML.item.inventorySlot.id + " - " + requestedItem.WoWHeadXML.item.inventorySlot.Value
+                + Environment.NewLine + "Slot = " + requestedItem.WoWHeadXML.SlotId + " - " + requestedItem.WoWHeadXML.SlotName
                 + Environment.NewLine + "Link = " + requestedItem.WoWHeadXML.item.link
-                + Environment.NewLine + Environment.NewLine + "Parsed Data:"
+                + Environment.NewLine + Environment.NewLine
                 + Environment.NewLine + "Stamina = " + requestedItem.WoWHeadXML.Stamina
                 + Environment.NewLine + "Agility = " + requestedItem.WoWHeadXML.Agility
                 + Environment.NewLine + "Intellect = " + requestedItem.WoWHeadXML.Intellect
