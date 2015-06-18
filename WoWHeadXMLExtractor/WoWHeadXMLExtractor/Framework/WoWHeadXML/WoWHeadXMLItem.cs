@@ -871,8 +871,12 @@ namespace WoWHeadXMLExtractor.Framework.Core
 
                 if (this.itemJsonData.sourcemore.Count > 0)
                 {
-                    string[] name = Enum.GetName(typeof(Zones), this.itemJsonData.sourcemore[0].z).Split(new string[] {"__"}, StringSplitOptions.None);
-                    returnValue = name[0].Replace('_', ' ');
+                    string[] name = Enum.GetName(typeof(Zones), this.itemJsonData.sourcemore[0].z).Split(new string[] {"______"}, StringSplitOptions.None);
+                    returnValue = name[0].Replace("_____", "' ");
+                    returnValue = name[0].Replace("____", "'");
+                    returnValue = name[0].Replace("___", ": ");
+                    returnValue = returnValue.Replace("__", "-");
+                    returnValue = returnValue.Replace('_', ' ');
                 }
 
                 return returnValue;
