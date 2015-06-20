@@ -46,6 +46,7 @@ namespace WoWHeadItems
                 + Environment.NewLine + "Slot = " + requestedItem.WoWHeadXML.SlotId + " - " + requestedItem.WoWHeadXML.SlotName
                 + Environment.NewLine + "Link = " + requestedItem.WoWHeadXML.item.link
                 + Environment.NewLine + Environment.NewLine
+                + Environment.NewLine + "Armor = " + requestedItem.WoWHeadXML.Armor
                 + Environment.NewLine + "Stamina = " + requestedItem.WoWHeadXML.Stamina
                 + Environment.NewLine + "Agility = " + requestedItem.WoWHeadXML.Agility
                 + Environment.NewLine + "Intellect = " + requestedItem.WoWHeadXML.Intellect

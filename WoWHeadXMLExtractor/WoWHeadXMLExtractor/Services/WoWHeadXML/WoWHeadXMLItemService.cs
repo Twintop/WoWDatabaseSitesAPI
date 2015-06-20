@@ -65,6 +65,8 @@ namespace WoWHeadXMLExtractor.Services
 
             record = (WoWHeadXMLItem)serializer.Deserialize(xmlReader);
 
+            string firstMatch = string.Empty;
+
             if (record.item != null)
             {
                 record.StrippedHtmlString = Utility.StripNonCommentTagsCharArray(record.item.htmlTooltip);
@@ -72,15 +74,16 @@ namespace WoWHeadXMLExtractor.Services
                 int indexStart,
                     indexEnd;
 
-                if (ParseSource > 0) //Parse from htmlTooltip
+                if (ParseSource != 1) //Parse from htmlTooltip
                 {
                     //Armor
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--amr--|", 0) + 9;
+                        firstMatch = "!--amr--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Armor", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Armor = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -90,10 +93,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Bonus Armor
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--rtg50--|", 0) + 11;
+                        firstMatch = "!--rtg50--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Bonus Armor", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.BonusArmor = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -103,10 +107,11 @@ namespace WoWHeadXMLExtractor.Services
                     //AgilityStrengthIntellect
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--stat71--|+", 0) + 12;
+                        firstMatch = "!--stat71--|+";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" [Agility or Strength or Intellect]", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.AgilityStrengthIntellect = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -116,10 +121,11 @@ namespace WoWHeadXMLExtractor.Services
                     //AgilityStrength
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--stat72--|+", 0) + 12;
+                        firstMatch = "!--stat72--|+";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" [Agility or Strength]", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.AgilityStrength = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -129,10 +135,11 @@ namespace WoWHeadXMLExtractor.Services
                     //AgilityIntellect
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--stat73--|+", 0) + 12;
+                        firstMatch = "!--stat73--|+";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" [Agility or Intellect]", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.AgilityIntellect = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -142,10 +149,11 @@ namespace WoWHeadXMLExtractor.Services
                     //StrengthIntellect
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--stat74--|+", 0) + 12;
+                        firstMatch = "!--stat74--|+";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" [Strength or Intellect]", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.StrengthIntellect = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -155,10 +163,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Intellect
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--stat5--|+", 0) + 12;
+                        firstMatch = "!--stat5--|+";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Intellect", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Intellect = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -168,10 +177,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Strength
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--stat4--|+", 0) + 12;
+                        firstMatch = "!--stat4--|+";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Strength", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Strength = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -181,10 +191,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Agility
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--stat3--|+", 0) + 12;
+                        firstMatch = "!--stat3--|+";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Agility", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Agility = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -194,10 +205,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Crit
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--rtg32--|", 0) + 11;
+                        firstMatch = "!--rtg32--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Critical Strike", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Crit = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -207,10 +219,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Haste
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--rtg36--|", 0) + 11;
+                        firstMatch = "!--rtg36--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Haste", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Haste = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -220,10 +233,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Mastery
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--rtg49--|", 0) + 11;
+                        firstMatch = "!--rtg49--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Mastery", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Mastery = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -233,10 +247,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Multistrike
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--rtg59--|", 0) + 11;
+                        firstMatch = "!--rtg59--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Multistrike", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Multistrike = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -246,10 +261,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Versatility
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--rtg40--|", 0) + 11;
+                        firstMatch = "!--rtg40--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Versatility", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Versatility = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -259,10 +275,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Spirit
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--rtg6--|", 0) + 10;
+                        firstMatch = "!--rtg6--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Spirit", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Spirit = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -272,10 +289,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Stamina
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--stat7--|+", 0) + 12;
+                        firstMatch = "!--stat7--|+";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Stamina", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Stamina = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -285,10 +303,11 @@ namespace WoWHeadXMLExtractor.Services
                     //SpellPower
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--rtg45--|", 0) + 11;
+                        firstMatch = "!--rtg45--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf(" Spell Power", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.SpellPower = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -298,10 +317,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Item Description
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--ndstart--|", 0) + 13;
+                        firstMatch = "!--ndstart--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf("!--ndend--|", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.Description = record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart));
                         }
@@ -311,10 +331,11 @@ namespace WoWHeadXMLExtractor.Services
                     //Item Level
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("!--ilvl--|", 0) + 10;
+                        firstMatch = "!--ilvl--|";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf("!", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             record.TooltipData.ItemLevel = Convert.ToInt32(record.StrippedHtmlString.Substring(indexStart, (indexEnd - indexStart)));
                         }
@@ -324,20 +345,22 @@ namespace WoWHeadXMLExtractor.Services
                     //Source + Drop Chance
                     try
                     {
-                        indexStart = record.StrippedHtmlString.IndexOf("Dropped by: ", 0) + 12;
+                        firstMatch = "Dropped by: ";
+                        indexStart = record.StrippedHtmlString.IndexOf(firstMatch, 0) + firstMatch.Length;
                         indexEnd = record.StrippedHtmlString.IndexOf("!", indexStart);
 
-                        if (indexStart >= 0 && indexEnd >= 0)
+                        if (indexStart >= firstMatch.Length && indexEnd >= firstMatch.Length)
                         {
                             try
                             {
-                                int indexStart2 = record.StrippedHtmlString.IndexOf("Drop Chance: ", indexStart) + 13;
+                                firstMatch = "Drop Chance: ";
+                                int indexStart2 = record.StrippedHtmlString.IndexOf(firstMatch, indexStart) + firstMatch.Length;
                                 int indexEnd2 = record.StrippedHtmlString.IndexOf("%", indexStart2);
 
-                                if (indexStart2 >= indexStart && indexEnd2 >= indexStart)
+                                if (indexStart2 >= indexStart + firstMatch.Length && indexEnd2 >= indexStart + firstMatch.Length)
                                 {
                                     record.TooltipData.DropChance = Convert.ToDouble(record.StrippedHtmlString.Substring(indexStart2, (indexEnd2 - indexStart2)));
-                                    indexEnd = indexStart2 - 13;
+                                    indexEnd = indexStart2 - firstMatch.Length;
                                 }
                             }
                             catch { }
@@ -349,7 +372,7 @@ namespace WoWHeadXMLExtractor.Services
 
                 }
 
-                if (ParseSource != 1) //pull from jsonEquip
+                if (ParseSource >= 1) //pull from jsonEquip
                 {
                     record.itemJsonData = JsonConvert.DeserializeObject<itemJson>("{" + record.item.json + "}");
                     record.itemJsonEquipData = JsonConvert.DeserializeObject<itemJsonEquip>("{" + record.item.jsonEquip + "}");
