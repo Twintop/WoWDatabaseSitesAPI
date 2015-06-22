@@ -904,7 +904,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
             {
                 string returnValue = string.Empty;
 
-                if (this.itemJsonData.sourcemore != null && this.itemJsonData.sourcemore.Count > 0)
+                if (this.itemJsonData.sourcemore != null && this.itemJsonData.sourcemore.Count > 0 && this.itemJsonData.sourcemore[0].z > 0)
                 {
                     string[] name = Enum.GetName(typeof(Zones), this.itemJsonData.sourcemore[0].z).Split(new string[] {"______"}, StringSplitOptions.None);
                     returnValue = name[0].Replace("_____", "' ");
