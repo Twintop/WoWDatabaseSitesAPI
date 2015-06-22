@@ -180,6 +180,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
 
     public enum Quality
     {
+        Unknown = -1,
         Poor = 0,
         Common = 1,
         Uncommon = 2,

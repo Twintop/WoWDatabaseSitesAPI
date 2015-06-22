@@ -578,6 +578,41 @@ namespace WoWHeadXMLExtractor.Framework.Core
             }
         }
 
+        public Quality Quality
+        {
+            get
+            {
+                Quality returnValue = Quality.Unknown;
+
+                if (Convert.ToInt32(this.item.quality.id) >= 0)
+                {
+                    returnValue = (Quality)Convert.ToInt32(this.item.quality.id);
+                }
+
+                return returnValue;
+            }
+        }
+
+        public int QualityId
+        {
+            get
+            {
+                int returnValue = (int)this.Quality;
+
+                return returnValue;
+            }
+        }
+
+        public string QualityName
+        {
+            get
+            {
+                string returnValue = Enum.GetName(typeof(Quality), this.Quality);
+
+                return returnValue;
+            }
+        }
+
         public int RangedDamageMax
         {
             get

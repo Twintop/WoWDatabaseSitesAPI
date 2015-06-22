@@ -39,7 +39,7 @@ namespace WoWHeadItems
                 + Environment.NewLine + "\tDungeon? = " + WoWHeadXMLExtractor.Utility.IsZoneDungeon(requestedItem.WoWHeadXML.ZoneEnum)
                 + Environment.NewLine + "\tScenario? = " + WoWHeadXMLExtractor.Utility.IsZoneScenario(requestedItem.WoWHeadXML.ZoneEnum)
                 + Environment.NewLine + "Level = " + requestedItem.WoWHeadXML.ItemLevel
-                + Environment.NewLine + "Quality = " + requestedItem.WoWHeadXML.item.quality.id + " - " + requestedItem.WoWHeadXML.item.quality.Value
+                + Environment.NewLine + "Quality = " + requestedItem.WoWHeadXML.QualityId + " - " + requestedItem.WoWHeadXML.QualityName
                 + Environment.NewLine + "Class = " + requestedItem.WoWHeadXML.item.@class.id + " - " + requestedItem.WoWHeadXML.item.@class.Value
                 + Environment.NewLine + "Subclass = " + requestedItem.WoWHeadXML.item.subclass.id + " - " + requestedItem.WoWHeadXML.item.subclass.Value
                 + Environment.NewLine + "Icon = " + requestedItem.WoWHeadXML.item.icon.displayId + " - " + requestedItem.WoWHeadXML.item.icon.Value
