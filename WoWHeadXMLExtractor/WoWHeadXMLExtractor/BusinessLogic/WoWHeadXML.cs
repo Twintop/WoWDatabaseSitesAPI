@@ -29,6 +29,9 @@ namespace WoWHeadXMLExtractor.BusinessLogic
                 case WoWHeadSiteType.Beta:
                     objectURL += "beta";
                     break;
+                case WoWHeadSiteType.Legion:
+                    objectURL += "legion";
+                    break;
             }
 
             objectURL += ".wowhead.com/";

@@ -135,7 +135,8 @@
             this.cbSite.Items.AddRange(new object[] {
             "Live",
             "PTR",
-            "Beta"});
+            "Beta",
+            "Legion"});
             this.cbSite.Location = new System.Drawing.Point(15, 128);
             this.cbSite.Name = "cbSite";
             this.cbSite.Size = new System.Drawing.Size(84, 21);
@@ -151,7 +152,7 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Site";
             // 
-            // Form1
+            // ExampleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,7 +167,7 @@
             this.Controls.Add(this.tbBonuses);
             this.Controls.Add(this.buttonGetXML);
             this.Controls.Add(this.textboxOutput);
-            this.Name = "Form1";
+            this.Name = "ExampleForm";
             this.Text = "WoWHead Item XML Extractor";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudID)).EndInit();

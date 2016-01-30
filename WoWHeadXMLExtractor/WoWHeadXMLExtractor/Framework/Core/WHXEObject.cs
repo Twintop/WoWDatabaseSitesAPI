@@ -43,7 +43,8 @@ namespace WoWHeadXMLExtractor.Framework.Core
     {
         Live = 1,
         PTR = 2,
-        Beta = 3
+        Beta = 3,
+        Legion = 4
     };
 
     public enum Classes
@@ -53,12 +54,13 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Hunter = 3,
         Rogue = 4,
         Priest = 5,
-        Druid = 6,
+        DeathKnight = 6,
         Shaman = 7,
         Mage = 8,
         Warlock = 9,
         Monk = 10,
-        DeathKnight = 11
+        Druid = 11,
+        DemonHunter = 12
     };
 
     public enum Specializations
