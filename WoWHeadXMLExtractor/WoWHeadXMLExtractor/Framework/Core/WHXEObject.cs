@@ -103,7 +103,9 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Monk_Windwalker = 269,
         DeathKnight_Blood = 250,
         DeathKnight_Frost = 251,
-        DeathKnight_Unholy = 252
+        DeathKnight_Unholy = 252,
+        DemonHunter_Havoc = 577,
+        DemonHunter_Vengeance = 581
     };
 
     public enum InventorySlot
