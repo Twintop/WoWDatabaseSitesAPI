@@ -80,7 +80,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Hunter_Marksmanship = 254,
         Hunter_Survival = 255,
         Rogue_Assassination = 259,
-        Rogue_Combat = 260,
+        Rogue_Outlaw = 260,
         Rogue_Subtlety = 261,
         Priest_Discipline = 256,
         Priest_Holy = 257,
@@ -237,6 +237,19 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Utgarde_Keep___Utgarde_Keep = 206,
         Utgarde_Keep___Utgard_Pinnacle = 1196,
 
+        //Cata Dungeons
+        Halls_of_Origination = 4945,
+        Zul__Gurub = 1977,
+        End_Time = 5789,
+        Zul__Aman = 3805,
+        Well_of_Eternity = 5788,
+        Hour_of_Twilight = 5844,
+        Grim_Batol = 4950,
+        Lost_City_of_the_Tol__vir = 5396,
+        The_Vortex_Pinnacle = 5035,
+        The_Stonecore = 5088,
+        Blackrock_Caverns = 4926,
+        Throne_of_the_Tides = 5004,
 
         //WoD Raids
         Highmaul = 6996,
@@ -269,6 +282,87 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Frostwall = 7004,
         Defense_of_Karabor = 7083,
         Lunarfall = 7078,
-        Shattrath_City = 6980
+        Shattrath_City = 6980,
+
+
+        //Legion Zones
+        Dalaran______2 = 7502,
+        Suramar = 7637,
+        Azsuna = 7334,
+        Highmountain = 7503,
+        Val__sharah = 7558,
+        Stormheim = 7541,
+        Thunder_Totem = 7731,
+        Chamber_of_Shadows______2 = 8012,
+        Azsuna______2 = 8000,
+        The_Greater_Sea = 8053,
+        Broken_Shore = 7543,
+        Shield__s_Rest = 7744,
+        The_Great_Sea = 7656,
+        Stormheim______2 = 7921,
+        Helmouth_Shallows = 7830,
+        Suramar______2 = 7767,
+        Thal__dranath = 8054,
+        The_Great_Sea______2 = 8445,
+        Eye_of_Azshara______2 = 7578,
+
+        //Legion Raids
+        The_Emerald_Nightmare = 8026,
+        The_Nighthold = 8025,
+
+        //Legion Dungeons
+        The_Arcway = 7855,
+        Vault_of_the_Wardens = 7787,
+        Black_Rook_Hold = 7805,
+        Court_of_Stars = 8079,
+        Hellmouth_Cliffs = 7812,
+        Violet_Hold = 7996,
+        Eye_of_Azshara = 8040,
+        Darkheart_Thicket = 7673,
+        Neltharion__s_Lair = 7546,
+        Halls_of_Valor = 7672,
+        Sword_of_Dawn = 8124,
+
+        //Legion Scenarios + Artifacts
+        The_Arcway______2 = 8423,
+        Gloaming_Reef = 8017,
+        The_Cove_of_Nashal = 7658,
+        Broken_Shore______2 = 7534,
+        Rescue_Koltira = 8250,
+        Tol_Barad______2 = 8309,
+        Realm_of_the_Mage_Hunter = 8205,
+        Karazhan______2 = 7969,
+        Karazhan______3 = 8265,
+        Temple_of_the_White_Tiger_Flight_Bounds = 8451,
+        The_Maelstrom______2 = 8046,
+        Abyssal_Maw = 8106,
+        Sanctum_of_Light______2 = 8347,
+        Temple_of_the_Jade_Serpent______2 = 8262,
+        Shadowgore_Citadel = 8142,
+        Black_Temple______2 = 8239,
+        Ursoc__s_Lair = 7974,
+        Tirisfal_Glades______2 = 8044,
+        The_Beyond = 8094,
+        Broken_Shore______3 = 7796,
+        Deepholm______2 = 7955,
+        Dreadscar_Rift______2 = 7918,
+        Icecrown_Citadel______2 = 7695,
+        Niskara = 7737,
+        Skywall______2 = 7960,
+
+        //Legion Class Halls
+        The_Maelstrom = 7745,
+        Acherus___The_Ebon_Hold = 7679,
+        Dreadscar_Rift = 7875,
+        The_Dreamgrove = 7846,
+        Hall_of_the_Guardian = 7879,
+        The_Fel_Hammer = 8023,
+        Chamber_of_Shadows = 8012,
+        Netherlight_Temple = 7834,
+        Sanctum_of_Light = 7638,
+        Skyhold = 7813,
+        Temple_of_Five_Dawns = 7903,
+        Trueshot_Lodge = 7877
+
     };
 }
