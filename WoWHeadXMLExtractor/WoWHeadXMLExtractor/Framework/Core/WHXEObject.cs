@@ -316,7 +316,7 @@ namespace WoWHeadXMLExtractor.Framework.Core
         Black_Rook_Hold = 7805,
         Court_of_Stars = 8079,
         Hellmouth_Cliffs = 7812,
-        Violet_Hold = 7996,
+        Assault_on_Violet_Hold = 7996,
         Eye_of_Azshara = 8040,
         Darkheart_Thicket = 7673,
         Neltharion__s_Lair = 7546,
