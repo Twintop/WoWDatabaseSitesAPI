@@ -54,6 +54,7 @@ namespace WoWDatabaseSitesAPI.Services
             Item returnedItem = WoWDatabaseSitesAPI.BusinessLogic.WoWDBAPI.ConvertItemJSON(wowdbJSON);
 
             returnedItem.WoWDBAPIJSON = wowdbJSON;
+            returnedItem.WoWDBAPIItem.Bonuses = bonuses;
 
             return returnedItem;
         }

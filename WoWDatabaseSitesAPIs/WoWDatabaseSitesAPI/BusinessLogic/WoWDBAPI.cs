@@ -38,7 +38,6 @@ namespace WoWDatabaseSitesAPI.BusinessLogic
                 objectURL += "?bonusIDs=" + bonuses;
             }
 
-
             string wowdbJSON = new WebClient().DownloadString(objectURL);
 
             // The JSON returned by WoWDB's API is conclosed in parenthesis. Strip these out if they exist.
@@ -60,7 +59,7 @@ namespace WoWDatabaseSitesAPI.BusinessLogic
             WoWDBItem wowdb_Item = new WoWDBItem();
 
             wowdb_Item = WoWDBAPIManager.Provider.GetJSONItem(rawJSON);
-
+            
             Item requestedItem = new Item()
             {
                 source = ItemSource.WoWDB

@@ -134,7 +134,7 @@ namespace WoWDatabaseSitesAPI.Framework.Core
                     returnValue = this.itemJsonEquipData.critstrkrtng;
                 }
 
-                if (this.TooltipData.Crit > returnValue)
+                if (this.TooltipData.Crit < returnValue || returnValue == 0)
                 {
                     returnValue = this.TooltipData.Crit;
                 }
@@ -289,7 +289,7 @@ namespace WoWDatabaseSitesAPI.Framework.Core
                     returnValue = this.itemJsonEquipData.hastertng;
                 }
 
-                if (this.TooltipData.Haste > returnValue)
+                if (this.TooltipData.Haste < returnValue || returnValue == 0)
                 {
                     returnValue = this.TooltipData.Haste;
                 }
@@ -419,7 +419,7 @@ namespace WoWDatabaseSitesAPI.Framework.Core
                     returnValue = this.itemJsonEquipData.mastrtng;
                 }
 
-                if (this.TooltipData.Mastery > returnValue)
+                if (this.TooltipData.Mastery < returnValue || returnValue == 0)
                 {
                     returnValue = this.TooltipData.Mastery;
                 }
@@ -794,7 +794,7 @@ namespace WoWDatabaseSitesAPI.Framework.Core
             {
                 int returnValue = 0;
 
-                if (this.itemJsonEquipData.versatility > returnValue)
+                if (this.itemJsonEquipData.versatility < returnValue || returnValue == 0)
                 {
                     returnValue = this.itemJsonEquipData.versatility;
                 }

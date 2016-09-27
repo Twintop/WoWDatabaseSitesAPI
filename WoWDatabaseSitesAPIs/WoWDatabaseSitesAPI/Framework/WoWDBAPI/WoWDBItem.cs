@@ -17,6 +17,7 @@ namespace WoWDatabaseSitesAPI.Framework.Core
 
         public WoWDBRootObject RootObject { get; set; }
 
+        public string Bonuses { get; set; }
         
         public int Agility
         {
@@ -141,7 +142,14 @@ namespace WoWDatabaseSitesAPI.Framework.Core
         {
             get
             {
-                return this.RootObject.DPS;
+                double returnValue = 0;
+
+                if (Convert.ToDouble(this.RootObject.DPS) > returnValue)
+                {
+                    returnValue = this.RootObject.DPS;
+                }
+
+                return returnValue;
             }
         }
 
@@ -198,7 +206,14 @@ namespace WoWDatabaseSitesAPI.Framework.Core
         {
             get
             {
-                return this.RootObject.ID;
+                int returnValue = 0;
+
+                if (this.RootObject.ID != null && Convert.ToInt32(this.RootObject.ID) > returnValue)
+                {
+                    returnValue = this.RootObject.ID;
+                }
+
+                return returnValue;
             }
         }
 
@@ -229,7 +244,14 @@ namespace WoWDatabaseSitesAPI.Framework.Core
         {
             get
             {
-                return this.RootObject.Level;
+                int returnValue = 0;
+
+                if (this.RootObject.Level != null && Convert.ToInt32(this.RootObject.Level) > returnValue)
+                {
+                    returnValue = this.RootObject.Level;
+                }
+
+                return returnValue;
             }
         }
 
@@ -237,7 +259,14 @@ namespace WoWDatabaseSitesAPI.Framework.Core
         {
             get
             {
-                return this.RootObject.SetID;
+                int returnValue = 0;
+
+                if (this.RootObject.SetID != null && Convert.ToInt32(this.RootObject.SetID) > returnValue)
+                {
+                    returnValue = this.RootObject.SetID;
+                }
+
+                return returnValue;
             }
         }
 
